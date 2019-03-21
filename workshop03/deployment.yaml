@@ -1,70 +1,23 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
+
 metadata:
-  name: demopythonappdp
+  name: weather-app-deployment
 spec:
-  replicas: 1
+  replicas: 2
   template:
     metadata:
       labels:
-        app: demopythonappdp
-        version: v1
+        app: weatherapp
     spec:
       containers:
-      - name: demopythonappcontainer
-        image: binoyramesh/mypythonapp
+      - name: weatherappcontainer
+        image: stackupiss/weather:v1
         imagePullPolicy: Always
         env:
-          - name: SERVICE_VERSION
-            value: v1
+        - name: APP_ID
+          value: 3af4185f06b6f8d839b72273c3d006f4
+          name: DEFAULT_CITY
+          value: SINGAPORE
         ports:
-          - containerPort: 6000
-
----
-
-apiVersion: extensions/v1beta1
-kind: Deployment
-metadata:
-  name: demopythonappdp2
-spec:
-  replicas: 1
-  template:
-    metadata:
-      labels:
-        app: demopythonappdp
-        version: v2
-    spec:
-      containers:
-      - name: demopythonappcontainer
-        image: binoyramesh/mypythonapp
-        imagePullPolicy: Always
-        env:
-          - name: SERVICE_VERSION
-            value: v2
-        ports:
-          - containerPort: 6000
-
----
-
-apiVersion: extensions/v1beta1
-kind: Deployment
-metadata:
-  name: demopythonappdp3
-spec:
-  replicas: 1
-  template:
-    metadata:
-      labels:
-        app: demopythonappdp
-        version: v3
-    spec:
-      containers:
-      - name: demopythonappcontainer
-        image: binoyramesh/mypythonapp
-        imagePullPolicy: Always
-        env:
-          - name: SERVICE_VERSION
-            value: v3-has-feature-to-call-hacker-news
-        ports:
-          - containerPort: 6000
-
+          - containerPort: 3000

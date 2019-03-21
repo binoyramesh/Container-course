@@ -1,12 +1,15 @@
-kind: Service
 apiVersion: v1
+kind: Service
+#apiVersion: v1
 metadata:
-  name:  demopythonappsvc
+  name:  weatherappservice
 spec:
   selector:
-    app: demopythonappdp
+    app:  weatherapp
   type:  LoadBalancer
   ports:
   - name:  http
     port:  80
-    targetPort:  6000
+    targetPort:  8080
+
+  
