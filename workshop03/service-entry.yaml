@@ -5,12 +5,12 @@ metadata:
   namespace: default
 spec:
   hosts:
-    "api.openweathermap.org"
+  - "api.openweathermap.org"
   ports:
-    number: 80
+  - number: 80
     protocol: http
     name:  http
-    number: 443
+  - number: 443
     protocol: https
     name:  https
   location: MESH_EXTERNAL

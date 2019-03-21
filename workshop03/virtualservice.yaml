@@ -5,7 +5,7 @@ metadata:
   namespace: default
 spec:
   hosts:
-  - "weather.68.183.247.112.nip.io"
+  - "weather.174.138.123.174.nip.io"
   gateways:
   - weatherapp-ingress
   http:

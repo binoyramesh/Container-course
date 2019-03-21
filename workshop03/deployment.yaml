@@ -17,7 +17,7 @@ spec:
         env:
         - name: APP_ID
           value: 3af4185f06b6f8d839b72273c3d006f4
-          name: DEFAULT_CITY
+        - name: DEFAULT_CITY
           value: SINGAPORE
         ports:
           - containerPort: 3000

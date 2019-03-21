@@ -9,7 +9,7 @@ spec:
   servers:
   - hosts:
   #modified this IP with isteo ingress gatweay IP 
-    - weather.68.183.247.112.nip.io
+    - weather.174.138.123.174.nip.io
     port:
       number: 80
       protocol: HTTP
